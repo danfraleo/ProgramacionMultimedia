@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.flowtogether"> <!-- Asegúrate de que el package sea correcto -->
+    package="com.example.flowtogether">
 
     <application
         android:allowBackup="true"
@@ -13,20 +13,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowTogether"
         tools:targetApi="31">
+        <activity
+            android:name=".DayTasksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <!-- MainActivity configurada como la actividad principal -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Calendario"
+            android:exported="false" /> <!-- MainActivity configurada como la actividad principal -->
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:exported="true"> <!-- Asegúrate de poner exported="true" en Android 12+ -->
+            android:exported="true"
+            android:label="@string/app_name"> <!-- Asegúrate de poner exported="true" en Android 12+ -->
+
 
             <!-- Intent Filter para marcarla como la actividad principal -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
